@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; // This defines how much 1 rem is.
+
+
+    @include respond(tab-land)      {font-size: 60%;} 
+    //want 9px font so 8px/16px = 0.5
+    @include respond(tab-port)      {font-size: 56.25%;} //want 8px font so 8px/16px = 0.5
+    @include respond(phone)         {font-size: 30%;} //want 8px font so 8px/16px = 0.5
+    @include respond(big-desktop)   {font-size: 75%;}
+    //want 12px font so 8px/16px = 0.5
+    
+
+    
+}
+
+body{
+    box-sizing: border-box; // See other body declarations in typography
+    padding: 3rem;
+    @include respond(tab-port) {padding: 0;} 
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}

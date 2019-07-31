@@ -1,0 +1,107 @@
+.btn{
+	&:link,
+	&:visited{
+		text-decoration: none;
+
+		display: inline-block;
+	}
+	transition: all $sp1 ease-out;
+	position: relative;
+	font-size: $default-font-size;
+	padding: 1.5rem 4.5rem;
+
+	&--large{
+		font-size: $default-font-size * 1.3;
+		padding: 1.5rem 4.5rem;
+	}
+	
+	&--pill{
+		font-size: $default-font-size * .8;
+		padding: .5rem 1.5rem;
+		border-radius: 50%;
+	}
+
+	&--white{
+		color: #777;
+		background-color: white;
+		border-color: white;
+		border-style: solid;
+		border-width: 2px;
+		&::after{
+			background-color: white;
+		}
+	}
+
+	&--primary{
+		background-color: $color-primary; 
+		border-color: $color-primary;
+		border-style: solid;
+		border-width: 2px;
+		color: white;
+		&::after{
+			background-color: $color-primary;   
+		}
+	}  
+	&--rounded{
+		border-radius: 5px;
+	}
+
+	&:hover{
+		transform: translateY(-3px);
+		box-shadow: 0 1rem 2rem rgba(0,0,0,0.2)        
+	}
+	&:active{
+		transform: translateY(-1px);
+		box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2)
+	}
+}
+
+.bubble::after{
+	content: "";
+	// background-color: white;
+	border-radius: 100rem;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1; 
+	transition: all $sp3 ease-out;
+}
+
+.bubble:hover::after{
+	transform: scale(1.5);
+	opacity: 0;
+}
+
+button {
+	font-size: 2.4rem;
+	padding: 1em 2em;
+	margin: .3rem;
+	border: 0;
+	outline: 0;
+	color: white;
+	background-color: $color-primary;
+	border-radius: 0.15em;
+	box-shadow: 0 0 .8rem rgba(0,0,0,.3);
+	overflow: hidden;
+	position: relative;
+}
+
+
+
+button .ripple {
+    border-radius: 50%;
+    background-color: rgba($color-white,0.5);
+    position: absolute;
+    transform: scale(0);
+    animation: ripple 0.4s ease-out;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
